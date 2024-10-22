@@ -3,9 +3,9 @@ import pandas as pd
 from sklearn.ensemble import IsolationForest
 from sklearn.impute import SimpleImputer
 
-# Function to load Excel data
+# Function to load CSV data
 def load_data(file):
-    data = pd.read_excel(file)
+    data = pd.read_csv(file)
     return data
 
 # Function for data validation: Missing values and outlier detection
@@ -20,10 +20,10 @@ def validate_data(df):
     return df
 
 # Streamlit app
-st.title('Excel Data Validation with Machine Learning')
+st.title('CSV Data Validation with Machine Learning')
 
 # File uploader
-uploaded_file = st.file_uploader("Choose an Excel file", type="xlsx")
+uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
 
 if uploaded_file is not None:
     df = load_data(uploaded_file)
